@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性绑定和双向数据绑定</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+<div id="root">
+    <!--    <div title="this is hello">hello</div>-->
+    <!--    <div v-bind:title="title">hello</div>-->
+    <div :title="title">hello</div>  <!--属性绑定-->
+<!--    <input :value="content">-->
+    <input v-model="content"> <!--数据双向绑定-->
+    <div>{{content}}</div>
+</div>
+<script>
+    new Vue({
+        el: "#root",
+        data: {
+            title: 'hahahahaha',
+            content: 'content'
+        }
+    })
+</script>
+</body>
+</html>
