@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>指令</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+<div id="root">
+    <!--    <div v-if="show">hello</div>-->
+    <div v-show="show">hello</div>
+    <button @click="handleCkick">toggle</button>
+    <ul>
+        <li v-for="(item,index) of list" :key="index">{{item}}</li>
+    </ul>
+</div>
+<script>
+    new Vue({
+        el: "#root",
+        data: {
+            show: true,
+            list: [1, 2, 3]
+        },
+        methods: {
+            handleCkick: function () {
+                this.show = !this.show;
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>todoList</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+<div id="root">
+    <div>
+        <input v-model="inputValue">
+        <button @click="handleClick">提交</button>
+    </div>
+    <ul>
+        <li v-for="(item,index) of list" :key="index">{{item}}</li>
+    </ul>
+</div>
+<script>
+    new Vue({
+        el: "#root",
+        data: {
+            inputValue: '',
+            list: []
+        },
+        methods: {
+            handleClick: function () {
+                this.list.push(this.inputValue)
+                this.inputValue = ''
+            }
+        }
+    })
+</script>
+</body>
+</html>

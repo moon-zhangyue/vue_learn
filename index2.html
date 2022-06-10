@@ -7,14 +7,35 @@
 </head>
 <body>
 <div id="root">
-
+    姓<input v-model="firstName">
+    名<input v-model="lastName">
+    <!--    <div>{{firstName}}{{lastName}}</div>-->
+    <div>{{fullName}}</div>
+    <div>{{count}}</div>
 </div>
 <script>
     new Vue({
         el: "#root",
         data: {
-            title: 'hahahahaha',
-            content: 'content'
+            firstName: '',
+            lastName: '',
+            count: 0
+        },
+        computed: {
+            fullName: function () {
+                return this.firstName + ' ' + this.lastName
+            }
+        },
+        watch: {
+            // firstName: function () {
+            //     this.count++
+            // },
+            // lastName: function () {
+            //     this.count++
+            // }
+            fullName: function () {
+                this.count++
+            }
         }
     })
 </script>
