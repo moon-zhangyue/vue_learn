@@ -1,13 +1,29 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+  <div>
+    <div>
+      <input v-model="inputValue">
+      <button @click="handleSubmit">提交</button>
+    </div>
+    <ul>
+
+    </ul>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  data() {
+    return {
+      inputValue: '',
+      list: []
+    }
+  },
+  methods: {
+    handleSubmit() {
+      this.list.push(this.inputValue)
+    }
+  }
+  // name: 'App'
 }
 </script>
 
