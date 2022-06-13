@@ -7,7 +7,7 @@ export default {
   props: ['content', 'index'],
   methods: {
     handleDelete() {
-      alert(this.index)
+      this.$emit('delete', this.index);
     }
   }
 }
