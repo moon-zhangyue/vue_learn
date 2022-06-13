@@ -1,5 +1,5 @@
 <template>
-  <li @click="handleDelete">{{ content }}</li>
+  <li class="item" @click="handleDelete">{{ content }}</li>
 </template>
 
 <script>
@@ -13,6 +13,8 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style scoped> /*作用域 当前*/
+.item{
+  color: green;
+}
 </style>
