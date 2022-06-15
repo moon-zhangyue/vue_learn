@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="./demo.css" />
+    <link rel="stylesheet" href="./demo.css"/>
     <script src="./vue.js"></script>
 </head>
 
@@ -45,11 +45,13 @@
         </tr>
         </thead>
         <tbody>
-        <tr v-for="person in people">
+        <tr v-for="(person,index) of people">
             <td>{{ person.name }}</td>
             <td>{{ person.age }}</td>
             <td>{{ person.sex }}</td>
-            <td :class="'text-center'"><button @click="deletePerson($index)">Delete</button></td>
+            <td :class="'text-center'">
+                <button @click="deletePerson(index)">Delete</button>
+            </td>
         </tr>
         </tbody>
     </table>
@@ -82,15 +84,15 @@
                 sex: 'Male'
             }]
         },
-        methods:{
-            createPerson: function(){
+        methods: {
+            createPerson: function () {
                 this.people.push(this.newPerson);
                 // 添加完newPerson对象后，重置newPerson对象
                 this.newPerson = {name: '', age: 0, sex: 'Male'}
             },
-            deletePerson: function(index){
+            deletePerson: function (index) {
                 // 删一个数组元素
-                this.people.splice(index,1);
+                this.people.splice(index, 1);
             }
         }
     })
