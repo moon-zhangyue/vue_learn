@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slots</title>
+</head>
+<body>
+<div id="app">
+    <modal-dialog>
+        <h1>Hello Vue.js!</h1><!--my-component标签中间所有的内容都会被替换掉-->
+    </modal-dialog>
+
+    <modal-dialog>
+    </modal-dialog>
+</div>
+<template id="dialog-template">
+    <div class="dialogs">
+        <div class="dialog" v-bind:class="{ 'dialog-active': show }">
+            <div class="dialog-content">
+                <div class="close rotate">
+                    <span class="iconfont icon-close" @click="close"></span>
+                </div>
+                <slot name="header"></slot>
+                <slot name="body"></slot>
+                <slot name="footer"></slot>
+            </div>
+        </div>
+        <div class="dialog-overlay"></div>
+    </div>
+</template>
+
+<script src="./vue.js"></script>
+<script>
+    Vue.component('modal-dialog', {
+        template: '#dialog-template',
+        props: ['show'],
+        methods: {
+            close: function () {
+                this.show = false
+            }
+        }
+    })
+
+    new Vue({
+        el: '#app',
+        data: {
+            show: false
+        },
+        methods: {
+            openDialog: function () {
+                this.show = true
+            },
+            closeDialog: function () {
+                this.show = false
+            }
+        }
+    })
+</script>
+</body>
+</html>
