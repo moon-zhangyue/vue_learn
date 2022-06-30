@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+<!--    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+<div id="app">
+    <!-- 在此补充代码 -->
+        <div v-html="title"></div>
+
+        <ul>
+            <li v-for="(item,index) of list" :key="index">{{item}}</li>
+
+        </ul>
+</div>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+
+            title: "<h1>小慕喜欢的水果</h1>",
+            list: ["芒果", "草莓", "荔枝", "山竹"]
+
+        },
+
+    })
+</script>
+</body>
+
+</html>
