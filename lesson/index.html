@@ -8,8 +8,13 @@
 <body>
 <div id="app"></div>
 <script>
+    //生命周期函数就是vue实例在某个时间点自动执行的函数
     var vm = new Vue({
-
+        el: '#app',
+        template: "<div>{{test}}</div>",
+        data: {
+            test: 'dddddddd'
+        }
     })
 </script>
 </body>
