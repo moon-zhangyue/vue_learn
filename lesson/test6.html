@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>联系</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <button :style="[styleObj]" @click="clickObj">
+        dddddd
+    </button>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            styleObj: {
+                background: 'purple',
+                fontSize: '20px' //大写绑定
+            }
+        },
+        methods: {
+            clickObj: function () {
+                this.styleObj.background = 'pink';
+                this.styleObj.fontSize = '30px'
+            }
+        }
+    })
+</script>
+</body>
+</html>
