@@ -4,20 +4,32 @@
     <meta charset="UTF-8">
     <title>样式绑定</title>
     <script src="../vue.js"></script>
+    <style>
+        .activated {
+            color: #ff0000;
+        }
+    </style>
 </head>
 <body>
 <div id="app">
-    <div @click="handleClick" :class="{activated:isActivated}">hello world</div>
+    <!--    <div @click="handleClick" :class="{activated:isActivated}">hello world</div>-->
+    <!--    <div @click="handleClick" :class="[activated]">hello world</div>-->
+    <div @click="handleClick" :style="styleObj">hello world</div>
 </div>
 <script>
     var vm = new Vue({
         el: '#app',
         data: {
-            isActivated: false
+            // activated: ''
+            styleObj: {
+                color: 'black'
+            }
         },
         methods: {
             handleClick: function () {
-                this.isActivated = true;
+                // this.isActivated = !this.isActivated;
+                // this.activated = this.activated === "activated" ? '' : "activated";
+                this.styleObj.color= this.styleObj.color === "black" ? 'red' : "black";
             }
         }
     })
