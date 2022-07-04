@@ -11,7 +11,7 @@
     <child content="Lee"></child>
 </div>
 <script>
-    Vue.prototype.bus = new Vue();
+    Vue.prototype.bus = new Vue(); //将vue实例赋值给vue的prototype的bus属性,所有创建的vue实例都会有这个属性
     Vue.component('child', {
         data: function () {
             return {
@@ -27,7 +27,7 @@
                 this.bus.$emit('change', this.selfContent);
             }
         },
-        mounted: function () {
+        mounted: function () {//被挂载时执行的函数,在模板渲染成html后会自动执行该函数
             var this_ = this
             this.bus.$on('change', function (msg) {
                 this_.selfContent = msg
