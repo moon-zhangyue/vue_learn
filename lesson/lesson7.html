@@ -16,23 +16,27 @@
         <tr is="row"></tr>
         </tbody>
     </table>-->
-    <div @click="handleClick">dddddddd</div>
+    <div ref="hello"
+         @click="handleClick">hello world
+    </div>
 </div>
 <script>
-    Vue.component('row', {
+    /*Vue.component('row', {
         data: function () {
             return {
                 content: 'this is content'
             }
         },
         template: '<tr><td>{{content}}</td></tr>'
-    })
+    })*/
 
     var vm = new Vue({
         el: '#root',
         methods: {
             handleClick: function () {
-                alert('dd')
+                // alert('dd')
+                console.log(this.$refs.hello);//<div>hello world</div>
+                console.log(this.$refs.hello.innerHTML);//hello world
             }
         }
     })
