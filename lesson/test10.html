@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test10</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="root">
+<!--    <child content="草莓" content1=""></child>-->
+    <child content="草莓" ></child>
+</div>
+<script>
+    Vue.component('child', {
+        props: {
+            content: {
+                type: String
+            },
+            content1: {
+                type: String,
+                default: '简单介绍一下自己喜欢的这个水果吧',
+                // validator: function (value) {
+                    // return value.length >= 5
+                // }
+            }
+        },
+        template: '<div><h1>{{content}}</h1><h3>{{content1}}</h3></div>'
+    })
+    var app = new Vue({
+        el: '#root'
+    })
+</script>
+</body>
+</html>
