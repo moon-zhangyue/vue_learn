@@ -1,8 +1,8 @@
 <template>
   <div class="header">
-    <div class="header-left"></div>
-    <div class="header-input"></div>
-    <div class="header-right"></div>
+    <div class="header-left">返回</div>
+    <div class="header-input">内容</div>
+    <div class="header-right">城市</div>
   </div>
 </template>
 
@@ -14,10 +14,14 @@ export default {
 
 <style lang="stylus" scoped>
 .header
-  height: .86rem
-             .header-Left
-             width:.64rem
-                      float:left
-                      .header-right
-                      width
+  display:flex
+  height:.86rem
+.header-Left
+  width:.64rem
+  float:left
+.header-input
+  flex:1
+.header-right
+  width:1.24rem
+  floatL:right
 </style>
