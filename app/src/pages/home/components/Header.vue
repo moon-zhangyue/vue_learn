@@ -16,6 +16,7 @@ export default {
 .header
   display:flex
   height:.86rem
+background:#00bcd4
 .header-Left
   width:.64rem
   float:left
