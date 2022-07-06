@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="header-left">返回</div>
-    <div class="header-input">内容</div>
+    <div class="header-input">输入城市/景点/游玩主题</div>
     <div class="header-right">城市</div>
   </div>
 </template>
@@ -14,15 +14,27 @@ export default {
 
 <style lang="stylus" scoped>
 .header
-  display:flex
-  height:.86rem
-background:#00bcd4
-.header-Left
-  width:.64rem
-  float:left
-.header-input
-  flex:1
-.header-right
-  width:1.24rem
-  floatL:right
+  display: flex
+  line-height: .86rem
+  background: #00bcd4
+  color: #fff
+
+  .header-Left
+    width: .64rem
+    float: left
+
+  .header-input
+    flex: 1
+    height: .64rem
+    line-height: .64rem
+    margin-top: .12rem
+    margin-left: .2rem
+    background: #fff
+    border-radius: .1rem
+    color: #cccccc
+
+  .header-right
+    width: 1.24rem
+    floatL: right
+    text-align: center
 </style>
