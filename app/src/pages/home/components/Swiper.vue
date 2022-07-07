@@ -24,7 +24,7 @@ export default {
         id: '0001',
         imgUrl: '//img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_256x160_f977b5d4.jpg'
       }, {
-        id: '0001',
+        id: '0002',
         imgUrl: '//img1.qunarzz.com/sight/p0/1505/f5/f5f45e1a83537bcb.water.jpg_256x160_618d3a8e.jpg'
       }]
     }
@@ -44,4 +44,5 @@ export default {
 
   .swiper-img
     width: 100%
+    height: 117px
 </style>
