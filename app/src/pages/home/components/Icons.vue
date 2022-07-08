@@ -74,7 +74,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '~styles/varibles.styl'
+@import '~styles/varibles.styl' //引入stylus自定义全局参数
 @import '~styles/mixins.styl'
 .icons >>> .swiper-container
   height: 0
