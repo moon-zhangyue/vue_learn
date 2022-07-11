@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOptions">
       <swiper-slide v-for="(page,index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-img">
@@ -16,51 +16,20 @@
 <script>
 export default {
   name: "HomeIcons",
+  props: {
+    list: Array
+  },
   data() {
     return {
-      iconList: [{
-        id: '0001',
-        imgUrl: 'https://picbed.qunarzz.com/01d2f57f920666364197a850dab859a8.png',
-        desc: '景点门票'
-      }, {
-        id: '0002',
-        imgUrl: 'https://picbed.qunarzz.com/c65b3bb7571a6bd62df669213e44b84d.png',
-        desc: '滑雪季节'
-      }, {
-        id: '0003',
-        imgUrl: 'https://picbed.qunarzz.com/25e3b9f17a21a6e0113c57a23ffccde4.png',
-        desc: '泡温泉'
-      }, {
-        id: '0004',
-        imgUrl: 'https://picbed.qunarzz.com/f6bb08a239ce1b038204120a8d1e4669.png',
-        desc: '动植物园'
-      }, {
-        id: '0005',
-        imgUrl: 'https://picbed.qunarzz.com/01d2f57f920666364197a850dab859a8.png',
-        desc: '景点门票'
-      }, {
-        id: '0006',
-        imgUrl: 'https://picbed.qunarzz.com/c65b3bb7571a6bd62df669213e44b84d.png',
-        desc: '滑雪季节'
-      }, {
-        id: '0007',
-        imgUrl: 'https://picbed.qunarzz.com/25e3b9f17a21a6e0113c57a23ffccde4.png',
-        desc: '泡温泉'
-      }, {
-        id: '0008',
-        imgUrl: 'https://picbed.qunarzz.com/f6bb08a239ce1b038204120a8d1e4669.png',
-        desc: '动植物园'
-      }, {
-        id: '0009',
-        imgUrl: 'https://img1.qunarzz.com/order/comp/2007/23/734c3c62d2adce02.png',
-        desc: '一日游'
-      }]
+      swiperOptions: {
+        autoplay: false //不要自动滚动
+      }
     }
   },
   computed: {
     pages() {
       const pages = []
-      this.iconList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
