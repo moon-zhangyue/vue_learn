@@ -1,18 +1,20 @@
 <template>
-    <div class="list">
-        <ul>
-            <li class="item">A</li>
-            <li class="item">A</li>
-            <li class="item">A</li>
-            <li class="item">A</li>
-            <li class="item">A</li>
-        </ul>
-    </div>
+    <ul class="list">
+        <li class="item" v-for="(item,key) of cities" :key="key" @click="handleLetterClick">{{ key }}</li>
+    </ul>
 </template>
 
 <script>
 export default {
-    name: "CityAlphabet"
+    name: "CityAlphabet",
+    props: {
+        cities: Object
+    },
+    methods: {
+        handleLetterClick(e) {
+            console.log(e.target.innerText)
+        }
+    }
 }
 </script>
 
