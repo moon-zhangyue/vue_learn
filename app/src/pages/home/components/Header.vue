@@ -9,7 +9,7 @@
         </div>
         <router-link to="/city">
             <div class="header-right">
-                {{ this.doubleCity }}
+                {{ this.city }}
                 <span class="iconfont arrow-icon">&#xe68f;</span>
             </div>
         </router-link>
@@ -23,7 +23,7 @@ export default {
     name: "HomeHeader",
     computed: {
         ...mapState(['city']), //展开运算符
-        ...mapGetters(['doubleCity'])
+        // ...mapGetters(['doubleCity'])
     }
 }
 </script>
