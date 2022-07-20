@@ -55,7 +55,6 @@ export default {
     },
     mounted() {
         this.lastCity = this.city
-        console.log('mounted')
         this.getHomeInfo()
     },
     activated() {//页面重新被显示时执行
