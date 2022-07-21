@@ -1,22 +1,31 @@
 <template>
-    <div class="banner">
-        <img class="banner-img"
-             src="http://img1.qunarzz.com/sight/p0/2206/53/53e08d9798742e47a3.water.jpg_600x330_6b90b466.jpg" alt="">
-        <div class="banner-info">
-            <div class="banner-title">
-                北京环球度假区
-            </div>
-            <div class="banner-number">
-                <span class="iconfont banner-icon">&#xea83;</span>
-                39
+    <div>
+        <div class="banner">
+            <img class="banner-img"
+                 src="http://img1.qunarzz.com/sight/p0/2206/53/53e08d9798742e47a3.water.jpg_600x330_6b90b466.jpg"
+                 alt="">
+            <div class="banner-info">
+                <div class="banner-title">
+                    北京环球度假区
+                </div>
+                <div class="banner-number">
+                    <span class="iconfont banner-icon">&#xea83;</span>
+                    39
+                </div>
             </div>
         </div>
+        <common-gallary></common-gallary>
     </div>
 </template>
 
 <script>
+import CommonGallary from 'common/gallary/Gallary'
+
 export default {
-    name: "DetailBanner"
+    name: "DetailBanner",
+    components: {
+        CommonGallary
+    }
 }
 </script>
 
