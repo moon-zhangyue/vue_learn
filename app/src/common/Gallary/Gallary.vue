@@ -1,14 +1,10 @@
 <template>
-    <div class="container">
+    <div class="container" @click="handleGallaryClick">
         <div class="wrapper">
             <swiper :options="swiperOptions">
-                <swiper-slide>
+                <swiper-slide v-for="(item,index) in imgs" :key="index">
                     <img class='gallary-img'
-                         src="//qimgs.qunarzz.com/piao_qsight_provider_piao_qsight_web/0100j1200046x94ebB936.jpg_350x240_807cfd94.jpg">
-                </swiper-slide>
-                <swiper-slide>
-                    <img class='gallary-img'
-                         src="//img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_350x240_8e61302a.jpg">
+                         :src="item">
                 </swiper-slide>
                 <div class="swiper-pagination" slot="pagination"></div>
             </swiper>
@@ -19,12 +15,27 @@
 <script>
 export default {
     name: "CommonGallary",
+    props: {
+        imgs: {
+            type: Array,
+            default() {
+                return []
+            }
+        }
+    },
     data() {
         return {
             swiperOptions: {
                 pagination: '.swiper-pagination',
-                paginationType: 'fraction'
+                paginationType: 'fraction',
+                observeParents: true, //将observe应用于Swiper的祖先元素。当Swiper的祖先元素变化时，例如window.resize，Swiper更新
+                observer: true //改变swiper的样式(例如隐藏/显示）或者修改swiper的子元素时，自动初始化swiper
             }
+        }
+    },
+    methods: {
+        handleGallaryClick() {
+            this.$emit('close')
         }
     }
 }
