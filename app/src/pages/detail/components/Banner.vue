@@ -2,19 +2,18 @@
     <div>
         <div class="banner" @click="handleBannerClick">
             <img class="banner-img"
-                 src="http://img1.qunarzz.com/sight/p0/2206/53/53e08d9798742e47a3.water.jpg_600x330_6b90b466.jpg"
-                 alt="">
+                 :src="bannerImg">
             <div class="banner-info">
                 <div class="banner-title">
-                    北京环球度假区
+                    {{ this.sightName }}
                 </div>
                 <div class="banner-number">
                     <span class="iconfont banner-icon">&#xea83;</span>
-                    39
+                    {{this.bannerImgs.length}}
                 </div>
             </div>
         </div>
-        <common-gallary :imgs="imgs" v-show="showGallary" @close="handleGallaryClose"></common-gallary>
+        <common-gallary :imgs="bannerImgs" v-show="showGallary" @close="handleGallaryClose"></common-gallary>
     </div>
 </template>
 
@@ -23,11 +22,14 @@ import CommonGallary from 'common/gallary/Gallary'
 
 export default {
     name: "DetailBanner",
+    props: {
+        sightName: String,
+        bannerImg: String,
+        bannerImgs: Array
+    },
     data() {
         return {
             showGallary: false,
-            imgs: ['//qimgs.qunarzz.com/piao_qsight_provider_piao_qsight_web/0100j1200046x94ebB936.jpg_350x240_807cfd94.jpg',
-                '//img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_350x240_8e61302a.jpg']
         }
     },
     methods: {
