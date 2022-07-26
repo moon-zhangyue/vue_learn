@@ -7,7 +7,12 @@
     }
 })*/
 const path = require('path')
+// eslint-disable-next-line no-undef
+/*module.exports = defineConfig({
+    lintOnSave: false
+})*/
 module.exports = {
+    lintOnSave: false,
     devServer: {
         proxy: {
             '/api': {
