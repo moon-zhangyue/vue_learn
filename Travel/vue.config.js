@@ -7,12 +7,13 @@
     }
 })*/
 const path = require('path')
+/*const {defineConfig} = require("@vue/cli-service");
 // eslint-disable-next-line no-undef
-/*module.exports = defineConfig({
+module.exports = defineConfig({
+    transpileDependencies: true,
     lintOnSave: false
 })*/
 module.exports = {
-    lintOnSave: false,
     devServer: {
         proxy: {
             '/api': {
