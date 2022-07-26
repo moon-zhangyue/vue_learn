@@ -7,13 +7,14 @@
     }
 })*/
 const path = require('path')
-/*const {defineConfig} = require("@vue/cli-service");
+const {defineConfig} = require("@vue/cli-service");
 // eslint-disable-next-line no-undef
 module.exports = defineConfig({
     transpileDependencies: true,
     lintOnSave: false
-})*/
+})
 module.exports = {
+    lintOnSave: false,
     devServer: {
         proxy: {
             '/api': {
@@ -28,5 +29,6 @@ module.exports = {
         config.resolve.alias
             .set('styles', path.join(__dirname, './src/assets/styles/'))
             .set('@', path.join(__dirname, './src/')) //起别名
+            .set('common', path.join(__dirname, './src/common/'))
     }
 }
