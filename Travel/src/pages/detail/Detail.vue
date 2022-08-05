@@ -38,6 +38,7 @@ export default {
             }).then(this.handleGetDataSucc)
         },
         handleGetDataSucc(res) {
+            
             res = res.data;
             if (res.ret && res.data) {
                 const data = res.data
